@@ -22,3 +22,27 @@ export const handleLogout = async (router: AppRouterInstance) => {
     console.error("Network error during logout:", error);
   }
 };
+
+export const getTenants = async () => {
+  const res = await fetch(`${API_BASE}/tenant`, {
+    method: "GET",
+    cache: "no-store",
+  });
+  if (!res.ok) throw new Error("Failed to fetch tenants");
+  return res.json();
+};
+
+export const handleDeleteTenant = async (
+  id: number,
+  router: AppRouterInstance,
+) => {
+  const res = await fetch(`${API_BASE}/tenant/delete/${id}`, {
+    method: "POST",
+  });
+
+  if (res.ok) {
+    router.refresh();
+    return true;
+  }
+  return false;
+};

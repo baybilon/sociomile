@@ -10,6 +10,7 @@ func Setup(app *fiber.App){
 
 	app.Post("/api/user/register", controllers.UserRegister)
 	app.Post("/api/agent/register", controllers.AgentRegister)
+	app.Get("/api/tenant/", controllers.GetTenants)
 	app.Post("/api/tenant/register/", controllers.TenantRegister)
 	app.Post("/api/tenant/update/:id", controllers.TenantUpdate)
 	app.Post("/api/tenant/delete/:id", controllers.TenantDelete)

@@ -7,6 +7,12 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
+func GetTenants(c *fiber.Ctx) error {
+    var tenants []models.Tenant
+    database.DB.Find(&tenants)
+    return c.JSON(tenants)
+}
+
 func TenantRegister(c *fiber.Ctx) error {
 	var data map[string]string
 	

@@ -129,7 +129,7 @@ export const dataSideBar = {
       items: [
         {
           title: "Tenant List",
-          url: "#",
+          url: "tenant",
         },
       ],
     },
@@ -174,4 +174,42 @@ export const dataSideBar = {
       icon: Map,
     },
   ],
+};
+
+// export const mockUsers: User[] = [
+//   {
+//     firstName: "Alice",
+//     lastName: "Johnson",
+//     age: 32,
+//     email: "alice.j@sociomile.io",
+//     comments: "Administrator for the North Region tenant.",
+//   },
+//   {
+//     firstName: "Bob",
+//     lastName: "Smith",
+//     age: 45,
+//     email: "bobsmith@provider.com",
+//     comments: "Frequent support ticket creator.",
+//   },
+//   {
+//     firstName: "Charlie",
+//     lastName: "Davis",
+//     age: 21,
+//     email: "charlie.d@startup.co",
+//     comments: "New agent in training.",
+//   },
+//   {
+//     firstName: "Dana",
+//     lastName: "Lee",
+//     age: 29,
+//     email: "dana.lee@enterprise.com",
+//     comments: "Requesting API access for custom integrations.",
+//   },
+// ];
+
+export type Tenant = {
+  Id: number;
+  Name: string;
+  Email: string;
+  Phone: string;
 };

@@ -9,13 +9,11 @@ interface Props {
 const Layout = ({ children }: Props) => {
   return (
     <div className="flex flex-col min-h-screen">
-      {" "}
       <SidebarProvider>
         <AppSidebar />
-        <main>
-          <SidebarTrigger />
-          {children}
-        </main>
+
+        <SidebarTrigger />
+        {children}
       </SidebarProvider>
     </div>
   );

@@ -7,7 +7,6 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 import { NavMain } from "./nav-main";
-import { dataSideBar } from "@/data";
 import { cookies } from "next/headers";
 import { TenantSwitcher } from "./tenant-switcher";
 import { NavUser } from "./nav-user";
@@ -28,13 +27,11 @@ async function getUser() {
   return res.json();
 }
 
-// AppSidebar now imports its data client-side to avoid passing
-// non-serializable values (like icon components) from Server -> Client.
 export async function AppSidebar() {
   const user = await getUser();
 
   if (!user) {
-    return null; // Or return a basic empty Sidebar shell
+    return null;
   }
 
   return (

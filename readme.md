@@ -44,11 +44,38 @@ localhost:3000
 localhost:8000
 ```
 
+## Usage
+
+```
+go run main.go
+npm run dev
+```
+
+## Admin login
+
+```
+email: atang@mail.com
+password: 123
+```
+
 ## API End Point
 
 ```
 POST/api/user/register
+{
+    "name": "name",
+    "email": "a@a.com",
+    "password": "1"
+}
+
 POST/api/agent/register
+{
+    "name": "Atep",
+    "email": "atep@mail.com",
+    "phone": "1234567890",
+    "tenant_id": [1, 5]
+}
+
 GET/api/tenant
 POST/api/tenant/register
 POST/api/tenant/update/:id

@@ -64,6 +64,7 @@ password: 123
 POST/api/user/register
 {
     "name": "name",
+    "role": "admin"
     "email": "a@a.com",
     "password": "1"
 }
